@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Recommendation</title>
+  <link rel="stylesheet" href="travel_style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">TravelBloom</div>
+
+    <ul class="nav-links">
+      <li><a href="travel_recommendation.html">Home</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+    </ul>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Enter a destination or keyword">
+      <button id="btnSearch" onclick="searchCondition()">Search</button>
+      <button id="btnClear" onclick="clearSearch()">Clear</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Explore Dream Destinations</h1>
+        <p>Discover beaches, temples and countries around the world with personalised travel recommendations.</p>
+        <button>Book Now</button>
+      </div>
+      <div id="results"></div>
+    </section>
+  </main>
+
+  <script src="travel_recommendation.js"></script>
+</body>
+</html>

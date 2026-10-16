@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | TravelBloom</title>
+  <link rel="stylesheet" href="travel_style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">TravelBloom</div>
+    <ul class="nav-links">
+      <li><a href="travel_recommendation.html">Home</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <h1>Contact Us</h1>
+
+    <section class="panel">
+      <h2>Contact Information</h2>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:info@travelbloom.com">info@travelbloom.com</a></li>
+        <li><strong>Phone:</strong> +60 82-123 456</li>
+        <li><strong>Address:</strong> 123 Jalan Travel, Kuching, Sarawak, Malaysia</li>
+        <li><strong>Office hours:</strong> Monday – Friday, 9:00 AM – 6:00 PM</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Send Us an Email</h2>
+      <p>Fill in the form and click Submit. Your email app will open with your message ready to send.</p>
+
+      <form id="contactForm" action="mailto:info@travelbloom.com" method="post" enctype="text/plain">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+      <p id="formStatus"></p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      const subject = encodeURIComponent(`Message from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      window.location.href = `mailto:info@travelbloom.com?subject=${subject}&body=${body}`;
+
+      document.getElementById("formStatus").textContent =
+        `Thank you, ${name}! Your email app is opening so you can send your message.`;
+    });
+  </script>
+</body>
+</html>
